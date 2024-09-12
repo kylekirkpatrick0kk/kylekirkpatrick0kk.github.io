@@ -74,22 +74,35 @@
     </footer>
 
     <script>
+        let isSubmitting = false;
+
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
+            
+            if (isSubmitting) return;
+            isSubmitting = true;
+
+            const submitButton = document.querySelector('#contact-form button[type="submit"]');
+            submitButton.disabled = true;
+    
             const serviceID = 'service_yblzqq8';
             const templateID = 'template_hlnnt5b';
-
+    
             const templateParams = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 message: document.getElementById('message').value
             };
-
+    
             emailjs.send(serviceID, templateID, templateParams)
                 .then(response => {
                     alert('Message sent successfully!');
+                    submitButton.disabled = false;
+                    isSubmitting = false;
                 }, error => {
                     alert('Failed to send message. Please try again later.');
+                    submitButton.disabled = false;
+                    isSubmitting = false;
                 });
         });
     </script>
