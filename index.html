@@ -97,6 +97,7 @@
             emailjs.send(serviceID, templateID, templateParams)
                 .then(response => {
                     alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
                     submitButton.disabled = false;
                     isSubmitting = false;
                 }, error => {
