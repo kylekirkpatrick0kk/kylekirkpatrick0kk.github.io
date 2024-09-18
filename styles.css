@@ -172,3 +172,17 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+/* gallery image styling */
+.project-gallery {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    flex: 1;
+}
