@@ -175,14 +175,18 @@ ul {
 
 /* gallery image styling */
 .project-gallery {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .project-image {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    flex: 1;
+    margin-bottom: 10px;
+}
+
+.project-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
